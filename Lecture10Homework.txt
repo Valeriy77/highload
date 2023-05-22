@@ -1,0 +1,35 @@
+Распределите следующие БД по типам репликации (single/multi/leaderless):
+
+Redis
+Single (Master-slave)
+http://onreader.mdl.ru/Redis4xCookbook/content/Ch05.html
+
+Elasticsearch
+https://www.elastic.co/guide/en/elasticsearch/reference/current/xpack-ccr.html
+Single (Master-slave)
+
+Neo4j
+http://neo4j.com/docs/stable/ha-architecture.html
+Single (Master-slave)
+
+Aerospike
+Cross Data Center Replication (XDCR) allows data to be replicated across databases that are potentially located in different clouds and different data centers. Cross Data Center Replication (XDCR) can be used to replicate data between databases.
+Multi (Master-Master)
+
+BigQuery
+Single, Multi
+Replication on multiple servers through master-slave, peer-to-peer replication architecture etc.
+
+
+CouchDB
+https://dev.to/yenyih/how-easy-to-setup-master-master-replication-in-couchdb-2ijj
+Multi (Master-Master)
+
+Clickhouse
+https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/replication
+Multi (Master-Master)
+
+etcd
+https://www.ibm.com/topics/etcd
+Multi (Master-Master)
+
