@@ -1,5 +1,5 @@
 Можно ли добиться линеаризуемости при проблемах с сетью и разделения системы? Объясните свою точку зрения.
-Линеаризуемость (в смысле «целостностью» в контексте САР),  Если операция В началась после успешного завершения операции А, тогда операция В должна видеть состояние системы в момент завершении А или же в новом состоянии. Налицо прямая корелляция реализуемости и проблемах с сетью. Ответ - думаю добиться нелегко.
+Линеаризуемость (в смысле «целостностью» в контексте САР),  Если операция В началась после успешного завершения операции А, тогда операция В должна видеть состояние системы в момент завершении А или же в новом состоянии. Налицо прямая корелляция реализуемости и проблемах с сетью. Ответ - добиться на практике невозможно, что также подтверждает Михаил в лекции.
 https://habr.com/ru/articles/258145/
 
 Можно ли добиться read committed isolation level при проблемах с сетью и разделения системы? А repeatable read? Объясните свою точку зрения. 
@@ -7,5 +7,11 @@ https://habr.com/ru/articles/258145/
 
 Можно ли добиться repeatable read isolation level при проблемах с сетью и разделения системы? Объясните свою точку зрения.
 
+Serializable:
+>>Unfortunately, Serializable is generally considered to be impractical, even for a non-distributed database. It is not a coincidence that all the existing popular databases like Postgres and MySQL recommend against it.
+https://planetscale.com/blog/pitfalls-of-isolation-levels-in-distributed-databases
+>>A Serializable setting is also subject to frequent deadlocks. 
+При проблемах с сетью обеспечение repeatable read isolation level и Serializable приведет к существенным задержкам при работе системы.
 
-Возможна ли в Leaderless replication линеаризуемость? Объясните почему.
+
+Возможна ли в Leaderless replication линеаризуемость? Объясните почему. Исходя из лекции, в ММ репликации линеаризуемости добиться тяжело. 
