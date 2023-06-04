@@ -39,7 +39,11 @@ PARTITIONS 10;
 Исходя из нашей модели, сложно редставить для чего нам понадобиться изолированось так как структура довольно простая и не предполагает одновременного изменения данных для конкретно взятого пользователя.
 https://github.com/Valeriy77/highload/blob/main/emoji_structure.png
 Предположим, что нам необходимо добавить возможность денежных переводов и донатов между пользователями.
-в этом случае мы будем использовать Serializable isolation level для максимальной надежности во избежание Phantom read
+в этом случае мы будем использовать Repeatable read isolation level для баланса надежности и скорости работы.
+Почему не Serializable? Блокировка одной транзакции может сильно усложнить выполнение других.
+>>Unfortunately, Serializable is generally considered to be impractical, even for a non-distributed database. It is not a coincidence that all the existing popular databases like Postgres and MySQL recommend against it.
+https://planetscale.com/blog/pitfalls-of-isolation-levels-in-distributed-databases
+
 
 Целостность (Какая нужна в приложении? Почему?)
 В MySQL есть дескрипторы, как InnoDB и BDB, которые имеют возможность работы с транзакциями.
