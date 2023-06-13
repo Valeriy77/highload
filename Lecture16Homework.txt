@@ -1,0 +1,3 @@
+https://github.com/Valeriy77/highload/blob/main/Lecture16Homework_saga_choreography.jpg
+
+https://github.com/Valeriy77/highload/blob/main/Lecture16Homework_saga_orchestrator.jpg
